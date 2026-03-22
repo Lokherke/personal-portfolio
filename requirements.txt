@@ -1,0 +1,2 @@
+# This is a Node.js/React project - dependencies are managed via npm/package.json
+# No Python dependencies required
