@@ -554,6 +554,218 @@ const HireMeModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void
 };
 
 /**
+ * PrivacyPolicyModal Component
+ * Displays privacy policy information.
+ */
+const PrivacyPolicyModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) => {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => { document.body.style.overflow = 'unset'; };
+  }, [isOpen]);
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-[300] flex items-center justify-center p-6 md:p-12"
+        >
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+            className="absolute inset-0 bg-bg-primary/95 backdrop-blur-xl"
+          />
+          
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0, y: 20 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.9, opacity: 0, y: 20 }}
+            className="relative w-full max-w-3xl max-h-[90vh] bg-card-bg border border-white/10 rounded-[2rem] overflow-hidden shadow-2xl flex flex-col"
+          >
+            <div className="p-8 md:p-10 border-b border-white/5 flex items-center justify-between sticky top-0 bg-card-bg z-10">
+              <h2 className="text-2xl md:text-3xl font-display font-bold uppercase tracking-tight">Privacy Policy</h2>
+              <motion.button
+                whileHover={{ rotate: 90, scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={onClose}
+                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-text-primary hover:bg-accent-primary hover:text-bg-primary transition-colors"
+              >
+                <X size={20} />
+              </motion.button>
+            </div>
+
+            <div className="flex-1 overflow-y-auto p-8 md:p-10 custom-scrollbar text-text-secondary text-sm space-y-6">
+              <div>
+                <h3 className="text-lg font-bold text-text-primary mb-3">Introduction</h3>
+                <p>This Privacy Policy outlines how I collect, use, and protect your personal information when you visit this portfolio website. Your privacy is important to me, and I am committed to being transparent about my data practices.</p>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-bold text-text-primary mb-3">Information I Collect</h3>
+                <p>I may collect the following types of information:</p>
+                <ul className="list-disc list-inside mt-2 space-y-2">
+                  <li>Contact information you provide through contact forms (name, email, message)</li>
+                  <li>Usage data such as pages visited, time spent, and browser information via analytics</li>
+                  <li>Device information including IP address and device type</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-bold text-text-primary mb-3">How I Use Your Information</h3>
+                <p>I use collected information for:</p>
+                <ul className="list-disc list-inside mt-2 space-y-2">
+                  <li>Responding to your inquiries and contact requests</li>
+                  <li>Improving website performance and user experience</li>
+                  <li>Analytics and understanding visitor behavior</li>
+                  <li>Professional recruitment and networking purposes</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-bold text-text-primary mb-3">Third-Party Services</h3>
+                <p>This website may use third-party services such as analytics platforms and hosting providers. These services have their own privacy policies, and I encourage you to review them.</p>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-bold text-text-primary mb-3">Data Security</h3>
+                <p>I implement industry-standard security measures to protect your information. However, no method of transmission over the internet is 100% secure.</p>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-bold text-text-primary mb-3">Your Rights</h3>
+                <p>You have the right to access, modify, or delete your personal information. Please contact me directly if you wish to exercise these rights.</p>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-bold text-text-primary mb-3">Changes to This Policy</h3>
+                <p>I may update this Privacy Policy from time to time. Changes will be effective immediately upon posting to the website.</p>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-bold text-text-primary mb-3">Contact</h3>
+                <p>For questions about this Privacy Policy, please contact me at <span className="text-accent-primary">neayac40@gmail.com</span></p>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
+
+/**
+ * TermsOfServiceModal Component
+ * Displays terms of service information.
+ */
+const TermsOfServiceModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) => {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => { document.body.style.overflow = 'unset'; };
+  }, [isOpen]);
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-[300] flex items-center justify-center p-6 md:p-12"
+        >
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+            className="absolute inset-0 bg-bg-primary/95 backdrop-blur-xl"
+          />
+          
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0, y: 20 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.9, opacity: 0, y: 20 }}
+            className="relative w-full max-w-3xl max-h-[90vh] bg-card-bg border border-white/10 rounded-[2rem] overflow-hidden shadow-2xl flex flex-col"
+          >
+            <div className="p-8 md:p-10 border-b border-white/5 flex items-center justify-between sticky top-0 bg-card-bg z-10">
+              <h2 className="text-2xl md:text-3xl font-display font-bold uppercase tracking-tight">Terms of Service</h2>
+              <motion.button
+                whileHover={{ rotate: 90, scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={onClose}
+                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-text-primary hover:bg-accent-primary hover:text-bg-primary transition-colors"
+              >
+                <X size={20} />
+              </motion.button>
+            </div>
+
+            <div className="flex-1 overflow-y-auto p-8 md:p-10 custom-scrollbar text-text-secondary text-sm space-y-6">
+              <div>
+                <h3 className="text-lg font-bold text-text-primary mb-3">Agreement to Terms</h3>
+                <p>By accessing and using this portfolio website, you accept and agree to be bound by the terms and provision of this agreement.</p>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-bold text-text-primary mb-3">Use License</h3>
+                <p>Permission is granted to temporarily download one copy of the materials (information or software) on this website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:</p>
+                <ul className="list-disc list-inside mt-2 space-y-2">
+                  <li>Modify or copy the materials</li>
+                  <li>Use the materials for any commercial purpose or for any public display</li>
+                  <li>Attempt to decompile or reverse engineer any software contained on the website</li>
+                  <li>Remove any copyright or other proprietary notations from the materials</li>
+                  <li>Transfer the materials to another person or "mirror" the materials on any other server</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-bold text-text-primary mb-3">Disclaimer</h3>
+                <p>The materials on this website are provided on an 'as is' basis. I make no warranties, expressed or implied, and hereby disclaim and negate all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property.</p>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-bold text-text-primary mb-3">Limitations</h3>
+                <p>In no event shall I or my suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on this website.</p>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-bold text-text-primary mb-3">Accuracy of Materials</h3>
+                <p>The materials appearing on this website could include technical, typographical, or photographic errors. I do not warrant that any of the materials on this website are accurate, complete, or current.</p>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-bold text-text-primary mb-3">Links</h3>
+                <p>I have not reviewed all of the sites linked to this website and am not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by me of the site. Use of any such linked website is at the user's own risk.</p>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-bold text-text-primary mb-3">Modifications</h3>
+                <p>I may revise these terms of service for this website at any time without notice. By using this website, you are agreeing to be bound by the then current version of these terms of service.</p>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-bold text-text-primary mb-3">Governing Law</h3>
+                <p>These terms and conditions are governed by and construed in accordance with the laws of the jurisdiction in which I reside, and you irrevocably submit to the exclusive jurisdiction of the courts in that location.</p>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
+
+/**
  * Main App Component
  * Orchestrates the entire landing page experience.
  */
@@ -561,6 +773,8 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isHireMeModalOpen, setIsHireMeModalOpen] = useState(false);
+  const [isPrivacyPolicyOpen, setIsPrivacyPolicyOpen] = useState(false);
+  const [isTermsOfServiceOpen, setIsTermsOfServiceOpen] = useState(false);
   const containerRef = useRef(null);
 
   // Initial loading simulation
@@ -610,6 +824,12 @@ export default function App() {
       
       {/* Hire Me Modal: Displays contact options when "Hire Me" is clicked */}
       <HireMeModal isOpen={isHireMeModalOpen} onClose={() => setIsHireMeModalOpen(false)} />
+      
+      {/* Privacy Policy Modal */}
+      <PrivacyPolicyModal isOpen={isPrivacyPolicyOpen} onClose={() => setIsPrivacyPolicyOpen(false)} />
+      
+      {/* Terms of Service Modal */}
+      <TermsOfServiceModal isOpen={isTermsOfServiceOpen} onClose={() => setIsTermsOfServiceOpen(false)} />
       
       {/* Hero Section: The first thing users see */}
       <section id="home" ref={heroRef} className="relative min-h-screen flex items-center justify-center px-6 pt-32 pb-20 overflow-hidden">
@@ -920,8 +1140,8 @@ export default function App() {
           <div className="flex flex-col items-center justify-center gap-6 pt-10 border-t border-white/5 text-sm text-text-secondary text-center">
             <p>© 2026 Neaya Chalise. All rights reserved.</p>
             <div className="flex gap-8">
-              <a href="#" className="hover:text-text-primary transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-text-primary transition-colors">Terms of Service</a>
+              <button onClick={() => setIsPrivacyPolicyOpen(true)} className="hover:text-text-primary transition-colors cursor-pointer bg-none border-none p-0">Privacy Policy</button>
+              <button onClick={() => setIsTermsOfServiceOpen(true)} className="hover:text-text-primary transition-colors cursor-pointer bg-none border-none p-0">Terms of Service</button>
             </div>
           </div>
         </div>
