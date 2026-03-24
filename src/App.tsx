@@ -450,6 +450,7 @@ const ProjectModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => voi
                     category={project.category}
                     image={project.image}
                     link={project.link}
+                    imageAlign={project.title === "F1 Simulation" ? "object-left" : undefined}
                   />
                 ))}
               </div>
@@ -740,7 +741,7 @@ export default function App() {
               viewport={{ once: true }}
               className="flex flex-wrap gap-3 max-w-md justify-end"
             >
-              {["Python", "SQL", "PyTorch", "Tableau", "BigQuery", "Scikit-Learn", "R", "Pandas"].map((skill) => (
+              {["Python", "SQL", "PyTorch", "Tableau", "Power BI", "Scikit-Learn", "R", "Pandas"].map((skill) => (
                 <SkillTag key={skill} name={skill} />
               ))}
             </motion.div>
