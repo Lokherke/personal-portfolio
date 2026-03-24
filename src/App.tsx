@@ -758,9 +758,9 @@ export default function App() {
             />
             <ServiceCard 
               index={1}
-              icon={Database}
-              title="Data Engineering"
-              description="Designing robust ETL pipelines and data warehouses for seamless information flow."
+              icon={LineChart}
+              title="Forecasting"
+              description="Building predictive models to forecast trends and anticipate future outcomes with accuracy."
               accent="secondary"
             />
             <ServiceCard 
