@@ -325,9 +325,10 @@ interface ProjectCardProps {
   image: string;
   index: number;
   link?: string;
+  imageAlign?: string;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, category, image, index, link = "#" }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, category, image, index, link = "#", imageAlign = "object-center" }) => {
   return (
     <a href={link} target="_blank" rel="noopener noreferrer" className="block">
       <motion.div 
@@ -342,7 +343,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, category, image, index
         <img 
           src={image} 
           alt={title} 
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${imageAlign}`}
           referrerPolicy="no-referrer"
         />
         {/* Hover Overlay: Shows category and title with a gradient background */}
@@ -807,10 +808,11 @@ export default function App() {
         <div className="grid md:grid-cols-2 gap-12">
           <ProjectCard 
             index={0}
-            title="Churn Prediction Engine"
-            category="Machine Learning / Python"
-            image="https://picsum.photos/seed/data1/800/600"
-            link="https://example.com/project/churn-prediction"
+            title="F1 Simulation"
+            category="monte carlo simulation/python"
+            image="/F1sim.png"
+            link="https://f1-simulation-bh98.onrender.com/"
+            imageAlign="object-left"
           />
           <ProjectCard 
             index={1}
